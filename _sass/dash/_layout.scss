@@ -257,12 +257,12 @@
 .credits {
   font-size: 10px;
   @include themed() {
-     color: lighten(t('background-color'), 5%);
+     color: lighten(t('background-color'), 25%);
   }
 
   & > a {
     @include themed() {
-         color: lighten(t('background-color'), 10%);
+         color: lighten(t('background-color'), 25%);
     }
     text-decoration: underline;
   }
