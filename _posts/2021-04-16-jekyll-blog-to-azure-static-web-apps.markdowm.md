@@ -25,12 +25,14 @@ Create a Jekyll site using Command Line Interface (CLI) - _Bash_ or _Zsh_ Termin
 cd jekyll-first-website
 {% endhighlight %}
 
+{:start="2"}
 2. Initialize a new Git repository.
 
 {% highlight console %}
 git init
 {% endhighlight %}
 
+{:start="3"}
 3. Commit the changes
 
 {% highlight console %}
@@ -46,6 +48,7 @@ git commit -m "Initial commit"
 git remote add origin https://github.com/<YOUR_USER_NAME>/<GITHUB_REPO>
 {% endhighlight %}
 
+{:start="3"}
 3. Push your local repo up to Github. Ensure that you are on the root directory of your Jekyll site.
 
 {% highlight console %}
@@ -74,6 +77,7 @@ git push -u origin master
 
 ![Image](/assets/images/azurestatic.png)
 
+{:start="10"}
 10. Click the **Sign in with GitHub** button.
 
 11. Click the **Authorize Azure-App-Service-Static-Web-Apps**.
@@ -108,6 +112,7 @@ git push -u origin master
 git pull
 {% endhighlight %}
 
+{:start="3"}
 3. Open the file name in `.github/workflows/<WORKFLOW_NAME>.yml` file. You can reference mine [here](https://github.com/aarreza/drewlearnscloudblog/blob/master/.github/workflows/azure-static-web-apps-proud-forest-0b3b9590f.yml). 
 
 4. Add the following configuration block before `-name: Build And Deploy`. This code checks out a private repository with `uses: actions/setup-ruby@v1` and in my case my local Ruby installed version is `3.0`. This will automatically install all the dependencies requires.
@@ -123,6 +128,7 @@ git pull
         run: jekyll build
 {% endhighlight %}
 
+{:start="5"}
 5. Commit the updated workflow YAML file and push to Github. 
 
 {% highlight console %}
@@ -131,10 +137,12 @@ git commit -m "Updating GitHub Actions workflow"
 git push
 {% endhighlight %}
 
+{:start="6"}
 6. By entering `git push`, GitHub Actions will trigger the build for your site. The first time creating your site, it will take a while. 
 
 ![Image](/assets/images/githubactions.png)
 
+{:start="7"}
 7. Once GitHub Actions completes. Go back to the Azure Static Web App. Under _Overview_, click on the _URL_ to view your deployed site. 
 
 At this, point my site is now up and running with a default _URL_ assigned by Azure. I will be setting up my `drewlearnscloud.blog` custom domain at a later post. 
