@@ -12,7 +12,7 @@ As a follow up to my previous blog on [Installing Jekyll on OSX Big Sur](/web). 
 - [Github Actions](https://docs.github.com/en/actions) 
 - [Static Web Apps in Azure](https://azure.microsoft.com/en-ca/pricing/details/app-service/static/#:~:text=Static%20Web%20Apps%20is%20free,Azure%20Functions%20Consumption%20plan%20rates.)
 
-All of these resources are **free** at the time of this post. You can set up an [Azure](https://azure.microsoft.com/en-us/free/) account for free for 12 months. Static Web App in Azure is currently on Preview until some time at the end of this year. The only costs I have so far is purchasing a domain name for a year for about _$10 CAD_ using [NameCheap](https://www.namecheap.com/). I also use [Cloudflare](https://www.cloudflare.com/plans/) for free as a Content Distribution Network and DNS. 
+All of these resources are **free** at the time of this post. You can set up an [Azure](https://azure.microsoft.com/en-us/free/) account for free for 12 months plus you get $260 USD worth of credits! Static Web App in Azure is currently on Preview until some time at the end of this year. The only costs I have so far is purchasing a domain name for a year for about _$10 CAD_ using [NameCheap](https://www.namecheap.com/). I also use [Cloudflare](https://www.cloudflare.com/plans/) for free as a Content Distribution Network and DNS. 
 
 For a [full tutorial](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-jekyll) on how to deploy a test Jekyll site, check out this post from Microsoft. 
 
