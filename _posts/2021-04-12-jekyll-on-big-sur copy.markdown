@@ -62,7 +62,7 @@ xcode-select --install
 {% endhighlight %}
 
 ## **Ruby v2.4.0 or higher**
-Jekyll is written in Ruby and it is helpful to understand the the following terminology.
+Jekyll is written in Ruby and it is helpful to understand the following terminology.
 
 **Gems** - code you can include in Ruby projects, you may add multiple gems packages to your project
 
@@ -71,9 +71,9 @@ Jekyll is written in Ruby and it is helpful to understand the the following term
 **Bundler** - a gem that installs all gems in your Gemfile. 
 
 ### **Installing Ruby**
-If you'd like to manage multiple Ruby versions, there's a number of of version managers you can check out `rbenv`, `rvm`, `chruby`. I won't be developing anything else at least for now so I'll stick with updating the preinstalled Ruby (v2.6.3) on my Mac. To check your Ruby version, type this command `ruby -v`. 
+If you'd like to manage multiple Ruby versions, there's a number of version managers you can check out `rbenv`, `rvm`, `chruby`. I won't be developing anything else at least for now so I'll stick with updating the preinstalled Ruby (v2.6.3) on my Mac. To check your Ruby version, type this command `ruby -v`. 
 
-We're ready to brew. Let's update Ruby by entering.
+We're ready to brew. Let's update Ruby by entering:
 
 {% highlight console %}
 brew install ruby
@@ -111,7 +111,7 @@ You should find the following line appended.
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 {% endhighlight %}
 
-At this point, quit and relaunch your terminal, and verify everything is working by entering `ruby -v`. It should be updated to `ruby 3.0.1p64`.
+At this point, quit and relaunch your terminal, and verify everything is working with `ruby -v`. It should be updated to `ruby 3.0.1p64`.
 
 You will now be able to manage Ruby Gems. Verify gem version using the command `gem -v`. The output will be `3.2.16`.
 
@@ -137,7 +137,7 @@ brew update
 brew install git
 {% endhighlight %}
 
-It is always a good practice to run `brew update` so that you get the latest version of software.
+It is always a good practice to run `brew update` so that you get the latest version of software prior to installing something.
 
 Verify your Git installation by running `git --version`. My version is `git version 2.24.3 (Apple Git-128)`.
 
