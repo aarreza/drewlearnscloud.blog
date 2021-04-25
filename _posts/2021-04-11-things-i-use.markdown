@@ -19,7 +19,7 @@ At home, I use a dual-booted, partitioned (Windows + Mac) 2 TB [Macbook Pro 15"]
 
 I have a single [32" Samsung Curved Monitor](https://www.samsung.com/ca/monitors/curved/curved-monitor-32-inch-lc32f391fwnxza/?cid=ca_owned_ppc_google_curved-monitor_sustain_monitors-2020_text_20180107-{keywords}_w) mounted to my desk which comes with a handy _Eye Saver Mode_.
 
-> **New monitors offer viewing experience ideal for gaming and multimedia, while reducing eye strain.**
+> New monitors offer viewing experience ideal for gaming and multimedia, while reducing eye strain.
 
 I have a dual vertical laptop stand from [AboveTEK](https://www.amazon.ca/Vertical-Laptop-Stand-AboveTEK-Computer/dp/B08F742YG1/ref=sr_1_1?dchild=1&keywords=abovetek+vertical+laptop&qid=1618264105&s=office&sr=1-1) and I use the [J5 Create USB-C hub](https://en.j5create.com/products/jca374) to connect my external peripherals. 
 
@@ -37,7 +37,7 @@ I mainly use [Firefox](https://www.mozilla.org/en-CA/firefox/new/) and [Chrome](
 
 For VPN, I use [TorGuard](https://torguard.net/) for personal and [Cisco AnyConnect](https://www.cisco.com/c/en_ca/products/security/anyconnect-secure-mobility-client/index.html) at work. 
 
-I use [Visual Studio Code](https://code.visualstudio.com/) as my default IDE. I've replaced my Terminal with [iTerm2](https://iterm2.com/) with custom Fonts with [oh-my-zsh](https://ohmyz.sh/). I'll probably do a separate post on how I've configured my dev environment, maybe on Ubuntu this time. 
+I use [Visual Studio Code](https://code.visualstudio.com/) as my default IDE. I also use [Atom](https://atom.io/) if I find some plugins don't play well in VS Code. I've replaced my Terminal with [iTerm2](https://iterm2.com/) with custom Fonts with [oh-my-zsh](https://ohmyz.sh/). I'll probably do a separate post on how I've configured my dev environment, maybe on Ubuntu this time. 
 
 As for my cloud storage, I use [Google Drive](https://www.google.com/drive/), [OneDrive](https://www.microsoft.com/en-ca/microsoft-365/onedrive/onedrive-for-business), [iCloud](https://www.apple.com/ca/icloud/) and [Dropbox](https://www.dropbox.com/?landing=dbv2). 
 
