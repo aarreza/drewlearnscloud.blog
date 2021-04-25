@@ -7,7 +7,7 @@ tags: [azure, terraform, ansible]
 permalink: /lab1
 ---
 
-I wanted to have an Active Directory lab set up for playing around with different [Identity Providers](https://en.wikipedia.org/wiki/Identity_provider) (IDP) such as [Okta](https://www.okta.com/), [OneLogin](https://www.onelogin.com/), [Auth0](https://auth0.com/), etc. I thought what better way to do it if I can automate the provisioning of Active Directory with Azure and put my free $260 worth of credits to work! 
+I wanted to have an Active Directory lab set up for playing around with different [Identity Providers](https://en.wikipedia.org/wiki/Identity_provider) (IDP) such as [Okta](https://www.okta.com/), [OneLogin](https://www.onelogin.com/), [Auth0](https://auth0.com/), etc. I thought what better way to do it if I can automate the provisioning of Active Directory with Azure and put my free $260 worth of credits to work!
 
 _I could have done some manual setup the old fashioned way by setting up a VMWare Workstation or Virtual Box then firing up a few Windows 10 ISOs but I already don't have enough resources on my PC/MAC._
 
@@ -16,7 +16,7 @@ So I thought, let's do a bit of research on how I can automate this because:
 - maybe I'll learn a few tricks along the way
 
 ## **The Tools**
-We'll be using the following tools for automating our lab: 
+We'll be using the following tools for automating our lab:
 - [Azure](https://azure.microsoft.com/en-us/overview/what-is-azure/) - to take advantage of my credits, you can create your own account [here](https://azure.microsoft.com/en-ca/free/search/?&ef_id=Cj0KCQjw4ImEBhDFARIsAGOTMj9G2nJOszTaL69IeOf6hQ1lOchqN6HkGb-owKKq2f_O8IxHHuTIMd4aAlqxEALw_wcB:G:s&OCID=AID2100017_SEM_Cj0KCQjw4ImEBhDFARIsAGOTMj9G2nJOszTaL69IeOf6hQ1lOchqN6HkGb-owKKq2f_O8IxHHuTIMd4aAlqxEALw_wcB:G:s)
 - [Terraform](https://www.terraform.io/intro/index.html) - I could have used ARM templates which are built-in to Azure but I wanted to learn Terraform's cloud-agnostic platform
 - [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs) - we'll be using to define the resources we want to provision in Azure using Terraform
@@ -37,10 +37,10 @@ _**Note:** I am using Mac OS Big Sur version 11.2.3_
 2. Enter `az login` and sign in to your Azure account.
 
 ## **Configure Terraform in Azure**
-1. You'll need Terraform. [Install](https://learn.hashicorp.com/tutorials/terraform/install-cli) it with Homebrew. 
+1. You'll need Terraform. [Install](https://learn.hashicorp.com/tutorials/terraform/install-cli) it with Homebrew.
 2. Create a new working folder, `mkdir AD_Lab && cd AD_Lab`
 
-3. Then create a sub-folder called `terraform`, this is where all your Terraform `.tf` files will be, `mkdir terraform && cd terraform`. 
+3. Then create a sub-folder called `terraform`, this is where all your Terraform `.tf` files will be, `mkdir terraform && cd terraform`.
 
 4. Create a new file called `provider.tf` with the following code. This is let Terraform know tht we are using the Azure Provider.
 {% highlight terraform %}
@@ -64,14 +64,14 @@ provider "azurerm" {
 
 # Create our virtual network
 
-Let's get the virtual networking out of the way first. Before we can do that, we need a few things: 
+Let's get the virtual networking out of the way first. Before we can do that, we need a few things:
 - A _resource group_ to place our resources into - I'll be using East US, you can use one closest to you.
-- A _virtual network_ 
+- A _virtual network_
 - A _subnet_ for our servers
 - A _network interface_ to attach to our DC
 - A _private IP_ subnet
 - A _public IP_ we can remote desktop into
-- A _network security group_ 
+- A _network security group_
 
 1. Here's how we can define it in Terraform. Create a new file called `domain-controller-net.tf`. We'll put all our network modules here.
 {% highlight terraform %}
@@ -126,7 +126,7 @@ resource "azurerm_public_ip" "main" {
 {% endhighlight %}
 
 {:start="2"}
-2. You can verify with `terraform plan` or go ahead with `terraform apply --auto-approve` at this point to provision the resources in Azure. 
+2. You can verify with `terraform plan` or go ahead with `terraform apply --auto-approve` at this point to provision the resources in Azure.
 
 ![Image](/assets/images/azure_idp_lab/azuretf1.png)
 
@@ -201,7 +201,7 @@ resource "azurerm_network_interface_security_group_association" "domain_controll
 {% endhighlight %}
 
 {:start="5"}
-5. Enter `terraform apply` and you should see your network security group added. 
+5. Enter `terraform apply` and you should see your network security group added.
 ![Image](/assets/images/azure_idp_lab/azuretf2.png)
 
 ## **Create our domain controller**
@@ -216,7 +216,7 @@ In our case, we will be using the `MicrosoftWindowsServer:2019-Datacenter:latest
 # Note: you'll need to run 'terraform init' before terraform apply-ing this, because 'random_password' is a new provider
 # Generates a random password with 8 digits for our domain controller
 resource "random_password" "domain_controller_password" {
-  length = 8
+  length = 16
 }
 
 # VM for our domain controller
@@ -266,7 +266,7 @@ resource "azurerm_virtual_machine" "domain_controller" {
 {% endhighlight %}
 
 {:start="2"}
-2. Update the `outputs.tf` file and add the following code. 
+2. Update the `outputs.tf` file and add the following code.
 {% highlight terraform %}
 # Display the dc local admin username
 output "local_admin_username" {
@@ -297,7 +297,7 @@ Changes to Outputs:
 {% endhighlight %}
 
 {:start="4"}
-4. Enter `terraform apply --auto-approve` then sit back, relax, or grab a coffee. Come back after a few minutes and hopefully provisioning is complete. 
+4. Enter `terraform apply --auto-approve` then sit back, relax, or grab a coffee. Come back after a few minutes and hopefully provisioning is complete.
 
 {% highlight console %}
 Apply complete! Resources: 9 added, 0 changed, 0 destroyed.
@@ -309,15 +309,15 @@ domain_controller_public_ip = "40.114.33.254"
 {% endhighlight %}
 
 {:start="5"}
-5. Download [Microsoft Remote Desktop for Mac](https://apps.apple.com/ca/app/microsoft-remote-desktop/id1295203466?mt=12) and enter the domain controller public ip and the _admin username_ and _password_. 
+5. Download [Microsoft Remote Desktop for Mac](https://apps.apple.com/ca/app/microsoft-remote-desktop/id1295203466?mt=12) and enter the domain controller public ip and the _admin username_ and _password_.
 
 ![Image](/assets/images/azure_idp_lab/azuretf4.png)
 
 {:start="6"}
-6. When you are done with your lab, don't forget to deprovision your resources by entering `terraform destroy --auto-approve`. 
+6. When you are done with your lab, don't forget to deprovision your resources by entering `terraform destroy --auto-approve`.
 
 {% highlight console %}
 Destroy complete! Resources: 9 destroyed.
 {% endhighlight %}
 
-Let's take this to [Part 2](/lab2), where there will be more Terraform code for the  workstations then some Ansible snippets to automate our whole lab deployment. 
+Let's take this to [Part 2](/lab2), where there will be more Terraform code for the  workstations then some Ansible snippets to automate our whole lab deployment.
