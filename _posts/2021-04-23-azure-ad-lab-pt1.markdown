@@ -217,6 +217,7 @@ In our case, we will be using the `MicrosoftWindowsServer:2019-Datacenter:latest
 # Generates a random password with 8 digits for our domain controller
 resource "random_password" "domain_controller_password" {
   length = 16
+  special = false
 }
 
 # VM for our domain controller
