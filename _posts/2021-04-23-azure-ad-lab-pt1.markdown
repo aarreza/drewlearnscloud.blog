@@ -27,7 +27,7 @@ We'll be using the following tools for automating our lab:
 - A Windows Server domain controller which is domain joined
 - One or more Windows 10 workstation(s) joined to the domain controller
 
-## **How long does?**
+## **How long does it take?**
 If you are a _speed-demon_, by all means click away and set all of this up manually. Running a timer took me about 15-20 mins to provision everything in Azure from start to finish. The tear-down takes a little under 5 mins.
 
 ## **Install [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)**
