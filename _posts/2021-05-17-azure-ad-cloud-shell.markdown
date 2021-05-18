@@ -72,7 +72,7 @@ az ad user create --display-name "Bruce Willis" --password "Password123!"
 
 ## **More Switches and commands**
 
-If you'd like explore more commands check out the following links here:
+If you'd like to explore more commands check out the following links here:
 
 - [Azure Powershell Documentation](https://docs.microsoft.com/en-us/powershell/module/az.resources/?view=azps-5.9.0&viewFallbackFrom=azps-2.0.0#active_directory)
 - [Azure CLI Documentation](https://docs.microsoft.com/en-us/cli/azure/ad/user?view=azure-cli-latest)
