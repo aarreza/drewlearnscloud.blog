@@ -26,7 +26,7 @@ title: drew learns cloud
 email: drew14388@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
  Hi, I'm Andrew. I love solving other people's problems and enjoy writing code.
- This blog is about technology, networking, cloud, and maybe allowing some magic to happen 
+ This blog is about technology, networking, cloud, security, and maybe allowing some magic to happen 
  with a click of a button.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
